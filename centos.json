@@ -55,18 +55,20 @@
     }
   ],
   "post-processors": [
-    {
-      "type": "vagrant",
-      "keep_input_artifact": true,
-      "compression_level": "9",
-      "output": "output/govtechstacksg-centos.box"
-    },
-    {
-      "type": "vagrant-cloud",
-      "box_tag": "govtechstacksg/centos",
-      "access_token": "{{user `cloud_token`}}",
-      "version": "0.0.1"
-    }
+    [
+      {
+        "type": "vagrant",
+        "keep_input_artifact": true,
+        "compression_level": "9",
+        "output": "output/govtechstacksg-centos.box"
+      },
+      {
+        "type": "vagrant-cloud",
+        "box_tag": "govtechstacksg/centos",
+        "access_token": "{{user `VAGRANT_CLOUD_TOKEN`}}",
+        "version": "0.0.1"
+      }
+    ]
   ],
   "provisioners": [
     {
