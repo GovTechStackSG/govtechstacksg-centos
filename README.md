@@ -45,5 +45,7 @@ vagrant up
 ```
 
 As per Vagrant box conventions, the credentials to use the image are as follows:
+```
 Username: vagrant
 Password: vagrant
+```
