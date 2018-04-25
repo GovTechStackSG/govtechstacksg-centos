@@ -1,6 +1,6 @@
 # GovTechStack.sg Centos Training VM
 
-This is a Packer script to build a Centos Desktop image for use in GovTechStack.sg training sessions.
+This is a Packer script to build a Centos 7 Desktop image for use in GovTechStack.sg training sessions.
 
 Pushed to vagrant cloud as govtechstacksg/centos
 
@@ -43,3 +43,7 @@ vagrant destroy --force
 vagrant box remove govtechstacksg/centos
 vagrant up
 ```
+
+As per Vagrant box conventions, the credentials to use the image are as follows:
+Username: vagrant
+Password: vagrant
