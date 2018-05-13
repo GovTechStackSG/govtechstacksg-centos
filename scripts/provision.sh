@@ -73,3 +73,5 @@ EOF
 sudo yum remove -y python-requests
 sudo pip install --upgrade pip
 sudo pip install docker-compose
+
+sudo chown -R vagrant:vagrant /home/vagrant

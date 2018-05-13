@@ -4,12 +4,12 @@
     {
       "type": "virtualbox-iso",
       "headless": "false",
-      "iso_checksum": "fe3d960cce4d2c1c9f1b66817fe87cc0ee1a1c6c5dd126204cb5c33d51a45620",
+      "iso_checksum": "937bf0a7b0932817f84f7230f15ed88911bbbd85c0c958680792b7f8d8f9c1a9",
       "iso_checksum_type": "sha256",
-      "iso_target_path": "iso/CentOS-7-x86_64-NetInstall-1708.iso",
+      "iso_target_path": "iso/CentOS-7-x86_64-NetInstall-1804.iso",
       "iso_urls": [
-        "iso/CentOS-7-x86_64-NetInstall-1708.iso",
-        "http://download.nus.edu.sg/mirror/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1708.iso"
+        "iso/CentOS-7-x86_64-NetInstall-1804.iso",
+        "http://download.nus.edu.sg/mirror/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1804.iso"
       ],
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -61,12 +61,6 @@
         "keep_input_artifact": true,
         "compression_level": "9",
         "output": "output/govtechstacksg-centos.box"
-      },
-      {
-        "type": "vagrant-cloud",
-        "box_tag": "govtechstacksg/centos",
-        "access_token": "{{user `VAGRANT_CLOUD_TOKEN`}}",
-        "version": "0.0.1"
       }
     ]
   ],
@@ -75,6 +69,7 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/provision.sh",
+        "scripts/broadcom.sh",
         "scripts/cleanup.sh"
       ],
       "type": "shell",
