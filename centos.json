@@ -69,7 +69,6 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/provision.sh",
-        "scripts/broadcom.sh",
         "scripts/cleanup.sh"
       ],
       "type": "shell",
