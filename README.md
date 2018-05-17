@@ -28,6 +28,9 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.cpus = 2
     vb.memory = "4096"
+    vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+    vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
+    vb.customize ["modifyvm", :id, "--usbxhci", "on"]
   end
 
 
