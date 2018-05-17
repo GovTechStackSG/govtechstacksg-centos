@@ -15,7 +15,7 @@
       "ssh_password": "vagrant",
       "ssh_timeout": "60m",
       "boot_command": "<tab> ks=hd:fd0:/anaconda-ks.cfg <enter><wait>",
-      "disk_size": "204800",
+      "disk_size": "28672",
       "floppy_files": [
         "floppy/govtechstacksg/anaconda-ks.cfg"
       ],
@@ -69,6 +69,7 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/provision.sh",
+        "scripts/broadcom2.sh",
         "scripts/cleanup.sh"
       ],
       "type": "shell",

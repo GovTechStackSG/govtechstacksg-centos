@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo yum group install 'Development Tools'
-sudo yum install redhat-lsb kernel-abi-whitelists
-sudo yum install kernel-devel-$(uname -r)
+sudo yum group install -y 'Development Tools'
+sudo yum install -y redhat-lsb kernel-abi-whitelists
+sudo yum install -y kernel-devel-$(uname -r)
 mkdir -p ${HOME}/rpmbuild/{BUILD,RPMS,SPECS,SOURCES,SRPMS}
 echo -e "%_topdir ${HOME}/rpmbuild\n%dist .el$(lsb_release -s -r|cut -d"." -f1).local" >> ~/.rpmmacros
 curl -sSLj -o ${HOME}/wl-kmod-6_30_223_271-5.el7.elrepo.nosrc.rpm http://elrepo.org/linux/elrepo/el7/SRPMS/wl-kmod-6_30_223_271-5.el7.elrepo.nosrc.rpm
