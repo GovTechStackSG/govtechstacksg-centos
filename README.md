@@ -5,6 +5,19 @@ This is a Packer script to build a Centos 7 Desktop image for use in GovTechStac
 Pushed to vagrant cloud as govtechstacksg/centos
 
 
+# Prerequisites
+
+1. Please ensure that your laptop meets the following requirements:
+	* Virtualization enabled in your BIOS Settings
+	* At least 2 CPU, 4 GB of RAM and 10GB of disk space available for the Vagrant Virtual Machine
+	
+2. Download and Install the following software:
+	* [Oracle VirtualBox 5.2.12](https://www.virtualbox.org/wiki/Downloads#VirtualBox5.2.12platformpackages)
+	* [Oracle VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads#VirtualBox5.2.12OracleVMVirtualBoxExtensionPack)
+	* [Vagrant 2.1.1](https://www.vagrantup.com/downloads.html)
+
+3. Follow the steps below to download and start the Vagrant Virtual Machine 
+
 # Running the Vagrant image
 
 Copy the following text to a file named ```Vagrantfile```
@@ -16,12 +29,12 @@ Vagrant.configure("2") do |config|
   config.vm.box = "govtechstacksg/centos"
 
   # Forwarded Ports
-  config.vm.network "forwarded_port", guest: 22, host: 22
+  #config.vm.network "forwarded_port", guest: 22, host: 22
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 8443, host: 8443
-  config.vm.network "forwarded_port", guest: 80, host: 80
-  config.vm.network "forwarded_port", guest: 443, host: 443
+  #config.vm.network "forwarded_port", guest: 8443, host: 8443
+  #config.vm.network "forwarded_port", guest: 80, host: 80
+  #config.vm.network "forwarded_port", guest: 443, host: 443
 
   # Configure and optimize according to your system specs
   config.vm.provider "virtualbox" do |vb|
@@ -30,7 +43,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "4096"
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
-    vb.customize ["modifyvm", :id, "--usbxhci", "on"]
+    #vb.customize ["modifyvm", :id, "--usbxhci", "on"]
   end
 
 
